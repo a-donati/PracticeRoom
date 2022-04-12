@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
+const { ensureAuth, ensureGuest } = require('../utils/auth')
 
 router.get('/', async (req, res) => {
   try {
@@ -11,8 +12,29 @@ router.get('/', async (req, res) => {
   }
 });
 
+
+// dashboard
+router.get('/dashboard', ensureAuth, async (req, res) => {
+  try {
+    // user.id? in place of req.session?
+    const userData = await User.findByPk(user.id, {
+      attributes: { exclude: ['password']},
+      include: [{model: Post}],
+    })
+    const user = userData.get({plain: true});
+
+    res.render('dashboard', {
+      ...user,
+      logged_in: true
+    });
+  }catch(err){
+    res.status(500).json(err);
+  }
+ });
+
   // Get all posts and JOIN with user data
-  router.get('/posts', async (req, res) => {
+  router.get('/posts', ensureAuth, async (req, res) => {
+    try {
       const postData = await Post.findAll({
         include: [
           {
@@ -29,9 +51,11 @@ router.get('/', async (req, res) => {
       res.render('practiceRoom', { 
         cssFile: '/css/posts.css',
         posts, 
-        logged_in: req.session.logged_in
-
+        // logged_in: req.session.logged_in
       })
+    }catch(err){
+      res.status(500).json(err)
+    }
     })
 
 
@@ -58,7 +82,7 @@ router.get('/', async (req, res) => {
 //   }
 // });
 
-router.get('/post/:id', async (req, res) => {
+router.get('/post/:id', ensureAuth, async (req, res) => {
   try {
       const postData = await Post.findByPk(req.params.id, {
           include: [
@@ -97,7 +121,7 @@ router.get('/auth/login', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+// comment
 // router.get('/auth/login', (req, res) => {
 //   // If the user is already logged in, redirect the request to another route
 //   if (req.session.logged_in) {
