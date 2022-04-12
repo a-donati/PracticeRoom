@@ -100,7 +100,7 @@ router.get('/auth/login', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+// comment
 // router.get('/auth/login', (req, res) => {
 //   // If the user is already logged in, redirect the request to another route
 //   if (req.session.logged_in) {
