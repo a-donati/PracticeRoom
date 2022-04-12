@@ -11,6 +11,26 @@ router.get('/', async (req, res) => {
   }
 });
 
+
+// dashboard
+router.get('/dashboard', async (req, res) => {
+  try {
+    // user.id? in place of req.session?
+    const userData = await User.findByPk(user.id, {
+      attributes: { exclude: ['password']},
+      include: [{model: Post}],
+    })
+    const user = userData.get({plain: true});
+
+    res.render('dashboard', {
+      ...user,
+      logged_in: true
+    });
+  }catch(err){
+    res.status(500).json(err);
+  }
+ });
+
   // Get all posts and JOIN with user data
   router.get('/posts', async (req, res) => {
     try {
