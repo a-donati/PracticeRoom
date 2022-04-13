@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-auto">
     {{! greet user from passed in data }}
-    <h2>Welcome, {{name}}</h2>
+    <h2>Welcome, </h2>
   </div>
 </div>
 
@@ -25,11 +25,11 @@
   </div>
 
   {{! if there are current posts, render }}
-  {{#if posts.length}}
+  {{!-- {{#if posts.length}} --}}
   <div class="col-md-6 post-list">
     <h3>My current posts:</h3>
 
-    {{#each posts as |post|}}
+    {{!-- {{#each posts as |post|}} --}}
     <div class="row mb-2">
       <div class="col-md-8">
         <h4><a href="/posts/{{post.id}}">{{post.title}}</a></h4>
@@ -39,9 +39,9 @@
       </div>
 
     </div>
-    {{/each}}
+    {{!-- {{/each}} --}}
   </div>
-  {{/if}}
+  {{!-- {{/if}} --}}
 </div>
 
 <script src="./js/dashboard.js"></script>

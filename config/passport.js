@@ -4,19 +4,6 @@ const User = require('../models/User');
 require('dotenv').config();
 var LocalStrategy = require('passport-local');
 
-// passport.js
-// req.session.passport.user
-// how to implement this into my passport.js
-
-// req.session.save(() => {
-//     req.session.user_id = user.id;
-//     req.session.logged_in = true;
-
-//     res.json({ user: userData, message: 'You are now logged in!' });
-//   });
-// dont use req.session.user as it pulls out user info from session cookie
-// use req.user
-
 // catch passport - passed in from server
 module.exports = function (passport) {
     passport.use(new GoogleStrategy(
@@ -45,12 +32,7 @@ module.exports = function (passport) {
                     user = await User.create(newUser)
                     done(null, user)
                 }
-                // req.session.passport.save(() => {
-                // req.session.passport.user_id = user.id;
-                // req.session.passport.logged_in = true;
 
-                // res.json({ user: userData, message: 'You are now logged in!' });
-                // });
             } catch (err) {
                 console.error(err);
             }
@@ -65,16 +47,9 @@ module.exports = function (passport) {
                 }
                 cb(null, user)
             } else {
-                // user = await User.create(req.body)
                 cb(null, false)
             }
-            
-            //         req.session.save(() => {
-            //             req.session.passport.user_id = user.id;
-            //             req.session.logged_in = true;
 
-            //             res.json({ user: userData, message: 'You are now logged in!' });
-            // });
         } catch (err) {
             console.error(err);
         }

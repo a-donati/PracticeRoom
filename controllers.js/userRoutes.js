@@ -14,6 +14,15 @@ router.get('/google/callback', passport.authenticate('google', {
     // if fails, redirect to login/homepage
     failureRedirect: '/'
 }), (req, res) => {
+    // req.session.save here
+    console.log(req);
+    console.log("USER ID:" + req.user.id);
+
+    req.session.save(() => {
+        req.session.user_id = req.user.id;
+        req.session.logged_in = true;
+        // res.json({ message: 'You are now logged in!' });
+    });
     // pass auth and redirect to user dashboard/profile
     res.redirect('/posts');
 });
@@ -27,11 +36,17 @@ router.get('/logout', (req, res) => {
 
 router.post('/signup', (req, res) => {
     const user = User.create(req.body);
-    if(user){
+    if (user) {
         res.status(200).end();
-    }else{
+    } else {
         res.status(500).end();
     }
+    console.log('Normal Sign up ID' + req.user.id)
+    req.session.save(() => {
+        req.session.user_id = req.user.id;
+        req.session.logged_in = true;
+        // res.json({ user: userData, message: 'You are now logged in!' });
+    });
 
 })
 
@@ -39,7 +54,13 @@ router.post('/signup', (req, res) => {
 router.post('/login', passport.authenticate('local', {
     successRedirect: '/posts',
     failureRedirect: '/login'
-  }));
+}, (req, res) => {
+    req.session.save(() => {
+        req.session.user_id = req.user.id;
+        req.session.logged_in = true;
+        // res.json({ user: userData, message: 'You are now logged in!' });
+    });
+}));
 
 
 module.exports = router;
