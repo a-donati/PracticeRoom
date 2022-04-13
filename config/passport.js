@@ -37,14 +37,14 @@ module.exports = function (passport) {
             // findone based on email address instead of userid
             // https://www.googleapis.com/discovery/v1/apis/oauth2/v2/rest?fields=auth(oauth2(scopes))
             try {
-                let user = await User.findOne({ googleId: profile.id })
+                // change to search by email
+                let user = await User.findOne({ username: profile.emails[0].value })
                 if (user) {
                     done(null, user)
                 } else {
                     user = await User.create(newUser)
                     done(null, user)
                 }
-
                 // req.session.passport.save(() => {
                 // req.session.passport.user_id = user.id;
                 // req.session.passport.logged_in = true;
@@ -68,7 +68,7 @@ module.exports = function (passport) {
                 // user = await User.create(req.body)
                 cb(null, false)
             }
-
+            
             //         req.session.save(() => {
             //             req.session.passport.user_id = user.id;
             //             req.session.logged_in = true;

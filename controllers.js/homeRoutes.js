@@ -16,8 +16,7 @@ router.get('/', async (req, res) => {
 // dashboard
 router.get('/dashboard', ensureAuth, async (req, res) => {
   try {
-    // user.id? in place of req.session?
-    const userData = await User.findByPk(user.id, {
+    const userData = await User.findOne({where: {username: username}}, {
       attributes: { exclude: ['password']},
       include: [{model: Post}],
     })
@@ -25,7 +24,7 @@ router.get('/dashboard', ensureAuth, async (req, res) => {
 
     res.render('dashboard', {
       ...user,
-      logged_in: true
+      // logged_in: true
     });
   }catch(err){
     res.status(500).json(err);
@@ -114,7 +113,7 @@ router.get('/post/:id', ensureAuth, async (req, res) => {
 router.get('/auth/login', async (req, res) => {
   try {
     res.render('login', {
-      cssFile: '/css/jass.css'
+      cssFile: '/css/posts.css'
     })
 
   } catch (err) {

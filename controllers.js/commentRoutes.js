@@ -8,7 +8,7 @@ router.get('/:id', async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['displayname'],
+                    attributes: ['displayName'],
                 }
             ]
         });
