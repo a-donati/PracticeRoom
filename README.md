@@ -16,7 +16,7 @@ Once signed in, the user has access to post messages, use the song selector, and
 
 ## Table of contents
 
-* [Pictures](#pictures)
+* [Screenshots](#screenshots)
 
 * [Usage](#usage)
 
@@ -30,9 +30,9 @@ Once signed in, the user has access to post messages, use the song selector, and
 * [References](#references)
 
 ---
-## Pictures
-
-![image](./public/img/Screenshot.png)
+## Screenshots
+<img src="public/img/updated-screen-shot.png" alt="drawing" height="600" width="700"/>
+<!-- ![image](./public/img/updated-screen-shot.png) -->
 
 --- 
 
@@ -40,7 +40,7 @@ Once signed in, the user has access to post messages, use the song selector, and
 
 Once signed up and signed in, user is redirected to the `posts` page where they are able to create/view posts. Clicking `menu` at the top right of the page will reveal a dropdown navbar to navigate through the site.
 
-[Deployed heroku application](https://immense-savannah-04794.herokuapp.com/)
+[Application deployed on Heroku](http://tranquil-eyrie-98828.herokuapp.com/) 
 
 ## Contributors
 
@@ -58,12 +58,11 @@ Once signed up and signed in, user is redirected to the `posts` page where they 
 
 To help add functionality, or for debugging/refactoring the code, please contact one of our team members to request access as a collaborator.
 
-
 ## Links
 
-[GitHub Repo](https://github.com/AllDeus/PracticeRoom) 
-
-[Deployed Application](https://immense-savannah-04794.herokuapp.com/) 
+[Original GitHub Repo](https://github.com/AllDeus/PracticeRoom) 
+[Forked Github Repo](https://github.com/a-donati/PracticeRoom)
+[Deployed Application](http://tranquil-eyrie-98828.herokuapp.com/) 
 
 
 # References 

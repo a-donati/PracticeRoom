@@ -2,105 +2,107 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-    <link rel="stylesheet" href="{{cssFile}}">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <link rel="stylesheet" href="{{cssFile}}">
 
-    <title>HomePage</title>
+  <title>HomePage</title>
 </head>
 
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
-    <div class="container">
-      <a href="/" class="navbar-brand">Practice Room</a>
-      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav">
-          {{!-- <li class="nav-item px-2">
-            <a href="index.html" class="nav-link active">Dashboard</a>
-          </li> --}}
-          {{!-- <li class="nav-item px-2">
-            <a href="posts.html" class="nav-link">Posts</a>
-          </li> --}}
-          {{!-- <li class="nav-item px-2">
-            <a href="categories.html" class="nav-link">Categories</a>
-          </li> --}}
-            {{!-- <li class="nav-item px-2">
-                <a href="users.html" class="nav-link">Users</a>
-            </li> --}}
-        </ul>
+  <div class="container">
+    <a href="/" class="navbar-brand">Practice Room</a>
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav">
+        {{!-- <li class="nav-item px-2">
+          <a href="index.html" class="nav-link active">Dashboard</a>
+        </li> --}}
+        {{!-- <li class="nav-item px-2">
+          <a href="posts.html" class="nav-link">Posts</a>
+        </li> --}}
+        {{!-- <li class="nav-item px-2">
+          <a href="categories.html" class="nav-link">Categories</a>
+        </li> --}}
+        {{!-- <li class="nav-item px-2">
+          <a href="users.html" class="nav-link">Users</a>
+        </li> --}}
+      </ul>
 
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item dropdown mr-3">
-            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-              <i class="fas fa-user"></i> Menu
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown mr-3">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+            <i class="fas fa-user"></i> Menu
+          </a>
+          <div class="dropdown-menu">
+            <a href="/dashboard" class="dropdown-item">
+              <i class="fas fa-user-circle"></i> Dashboard
             </a>
-            <div class="dropdown-menu">
-              <a href="/dashboard" class="dropdown-item">
-                <i class="fas fa-user-circle"></i> Dashboard
-              </a>
-                <a href="/posts" class="dropdown-item">
-                <i class="fas fa-comments"></i> Discussion
-              </a>
-                <a href="/songRoutes" class="dropdown-item">
-                <i class="fas fa-music"></i> Song Selector
-              </a>
-                <a href="/tunerRoutes" class="dropdown-item">
-                <i class="fas fa-guitar"></i> Tuner
-              </a>
-                <a href="/api/seatGeekRoutes" class="dropdown-item">
-                <i class="fas fa-search"></i> Artist Search
-              </a>
-              <a href="/auth/logout" class="dropdown-item">
-                <i class="fas fa-sign-out-alt"></i>Sign Out
-              </a>
-            </div>
-          </li>
-          {{!-- <li class="nav-item">
-            <a href="login.html" class="nav-link">
-              <i class="fas fa-user-times"></i> Logout
-            </a> --}}
-          </li>
-        </ul>
-      </div>
+            <a href="/posts" class="dropdown-item">
+              <i class="fas fa-comments"></i> Discussion
+            </a>
+            <a href="/songRoutes" class="dropdown-item">
+              <i class="fas fa-music"></i> Song Selector
+            </a>
+            <a href="/tunerRoutes" class="dropdown-item">
+              <i class="fas fa-guitar"></i> Tuner
+            </a>
+            <a href="/api/seatGeekRoutes" class="dropdown-item">
+              <i class="fas fa-search"></i> Artist Search
+            </a>
+            <a href="/auth/logout" class="dropdown-item">
+              <i class="fas fa-sign-out-alt"></i> Sign Out
+            </a>
+          </div>
+        </li>
+        {{!-- <li class="nav-item">
+          <a href="login.html" class="nav-link">
+            <i class="fas fa-user-times"></i> Logout
+          </a> --}}
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
 
 <body>
-    {{!-- <div class="wrapper">
-        <div class="navbar">
-            <div class="logo">
-                <a href="/">Practice Room</a>
-            </div>
-            <div class="nav_right"> --}}
-                
-                            </div>
-                        </div>
-                    </li>
-                    {{!-- <li class="nr_li">
+  {{!-- <div class="wrapper">
+    <div class="navbar">
+      <div class="logo">
+        <a href="/">Practice Room</a>
+      </div>
+      <div class="nav_right"> --}}
 
-                        <input type="text" placeholder="Search.." name="search">
-                        <button type="submit"><i class="fa fa-search"></i></button>
-                        </form>
-                    </li> --}}
-                </ul>
-            </div>
-        </div>
+      </div>
     </div>
-    <main> {{{ body }}}</main>
+    </li>
+    {{!-- <li class="nr_li">
 
-      <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+    </li> --}}
+    </ul>
+  </div>
+  </div>
+  </div>
+  <main> {{{ body }}}</main>
+
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+    integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
     crossorigin="anonymous"></script>
   <script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
 

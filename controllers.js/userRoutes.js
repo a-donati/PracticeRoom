@@ -19,7 +19,7 @@ router.get('/google/callback', passport.authenticate('google', {
     console.log("USER ID:" + req.user.id);
 
     req.session.save(() => {
-        req.session.user_id = req.user.id;
+        req.session.user_id = req.session.user.id;
         req.session.logged_in = true;
         // res.json({ message: 'You are now logged in!' });
     });
@@ -43,9 +43,9 @@ router.post('/signup', (req, res) => {
     }
     console.log('Normal Sign up ID' + req.user.id)
     req.session.save(() => {
-        req.session.user_id = req.user.id;
+        req.session.user_id = req.session.user.id;
         req.session.logged_in = true;
-        // res.json({ user: userData, message: 'You are now logged in!' });
+        // res.json({ message: 'You are now logged in!' });
     });
 
 })
@@ -56,9 +56,9 @@ router.post('/login', passport.authenticate('local', {
     failureRedirect: '/login'
 }, (req, res) => {
     req.session.save(() => {
-        req.session.user_id = req.user.id;
+        req.session.user_id = req.session.user.id;
         req.session.logged_in = true;
-        // res.json({ user: userData, message: 'You are now logged in!' });
+        // res.json({ message: 'You are now logged in!' });
     });
 }));
 
