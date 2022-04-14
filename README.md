@@ -61,7 +61,9 @@ To help add functionality, or for debugging/refactoring the code, please contact
 ## Links
 
 [Original GitHub Repo](https://github.com/AllDeus/PracticeRoom) 
+
 [Forked Github Repo](https://github.com/a-donati/PracticeRoom)
+
 [Deployed Application](http://tranquil-eyrie-98828.herokuapp.com/) 
 
 
