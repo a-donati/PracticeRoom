@@ -7,7 +7,7 @@ const partwo = document.querySelector('.partwo');
 const continueButton = document.querySelector('.continueButton');
 
 
-let timeCount = 10;
+let timeCount = 5;
 
 // function changes what is displayed by time
 const theTimer = async (event) => {
@@ -18,7 +18,7 @@ const theTimer = async (event) => {
 
         timeCount = timeCount - 1;
 
-        if (timeCount == 9) {
+        if (timeCount > 3) {
             document.getElementsByClassName("songButton")[0].className = "noSongButton";
             document.getElementsByClassName("songCard")[0].className = "newSongCardGlow";
 
@@ -29,7 +29,7 @@ const theTimer = async (event) => {
             document.getElementsByClassName("iconDiv")[0].className = " iconNewDiv";
         }
 
-        else if (timeCount == 5) {
+        else if (timeCount == 3) {
             document.getElementsByClassName("iconNewDiv")[0].className = " iconDiv";
             textInfo.textContent = 'Selecting Song...';
             document.getElementsByClassName("svgDiv")[0].className = " svgNewDiv";
