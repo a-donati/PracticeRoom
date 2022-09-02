@@ -15,14 +15,21 @@ router.get('/google/callback', passport.authenticate('google', {
     failureRedirect: '/'
 }), (req, res) => {
     // req.session.save here
-    console.log(req);
-    console.log("USER ID:" + req.user.id);
-
-    // req.session.save(() => {
-    //     // req.session.user_id = req.session.user.id;
-    //     req.session.logged_in = true;
-    //     // res.json({ message: 'You are now logged in!' });
-    // });
+    // console.log(req);
+    // console.log(req)
+    // console.log("USER IS HEREEEE:" + req.user)
+    // console.log("USER ID:" + req.user.id);
+    // console.log("USER ID:" + req.user.id);
+    // https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/express-session/index.d.ts
+    // declaration merging
+    // https://stackoverflow.com/questions/65583885/js-docker-property-user-does-not-exist-on-type-session-partialsessiondat
+    req.session.save(() => {
+        req.session.user_id = req.user.id;
+        req.session.logged_in = true;
+        // res.json({ message: 'You are now logged in!' });
+    });
+    var sessionData = req.session;
+    console.dir(`SESSION DATA` + sessionData)
     // pass auth and redirect to user dashboard/profile
     res.redirect('/posts');
 });

@@ -6,7 +6,7 @@ const axios = require('axios');
 
 
 // get page
-router.get('/', ensureAuth, async (req, res) => {
+router.get('/', async (req, res) => {
 
   res.render('seatGeek', {
     cssFile: "/css/songSelect.css"

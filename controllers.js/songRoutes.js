@@ -4,7 +4,7 @@ const { Song } = require('../models');
 
 
 // get songRoutes route
-router.get('/songRoutes', ensureAuth, async (req, res) => {
+router.get('/songRoutes', async (req, res) => {
 
     res.render('song', {
         cssFile: "/css/songSelect.css"
@@ -13,7 +13,7 @@ router.get('/songRoutes', ensureAuth, async (req, res) => {
 
 
 // get songRoutes/song route
-router.get('/songRoutes/song', ensureAuth, async (req, res) => {
+router.get('/songRoutes/song', async (req, res) => {
 
 
     const songPicker = async () => {
