@@ -17,6 +17,7 @@ const seedDatabase = async () => {
   for (const blog of blogData) {
     await Post.create({
       ...blog,
+      user_id: users[Math.floor(Math.random() * users.length)].id,
     });
   }
 

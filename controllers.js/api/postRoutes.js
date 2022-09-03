@@ -1,8 +1,10 @@
 const router = require('express').Router();
 const { Post, User } = require('../../models/index');
+const withAuth = require('../../utils/auth');
+
 
 // create post route
-router.post('/', async (req, res)=> {
+router.post('/', withAuth, async (req, res)=> {
     try {
         const newPost = await Post.create({
             ...req.body,
@@ -52,7 +54,7 @@ router.put('/:id', async (req, res) => {
 });
 
 // delete post by id
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try {
         const postData = await Post.destroy({
             where: {

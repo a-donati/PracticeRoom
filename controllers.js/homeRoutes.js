@@ -1,10 +1,14 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
-const { ensureAuth, ensureGuest } = require('../utils/auth')
+// const { ensureAuth, ensureGuest } = require('../utils/auth')
+const withAuth = require('../utils/auth');
 
+// homepage get route
 router.get('/', async (req, res) => {
   try {
     res.render('homepage', {
+      // posts, 
+        logged_in: req.session.logged_in, 
       cssFile: '/css/home.css'
     })
   } catch (err) {
@@ -31,7 +35,8 @@ router.get('/', async (req, res) => {
 //   }
 //  });
 
-router.get('/dashboard', async (req, res) => {
+
+router.get('/dashboard', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password']},
@@ -41,13 +46,12 @@ router.get('/dashboard', async (req, res) => {
 
     res.render('dashboard', {
       ...user,
-      logged_in: req.session.logged_in
+      logged_in: true
     });
   }catch(err){
     res.status(500).json(err);
   }
  });
-
 
 
   // Get all posts and JOIN with user data
@@ -57,7 +61,7 @@ router.get('/dashboard', async (req, res) => {
         include: [
           {
             model: User,
-            attributes: ['displayName'],
+            attributes: ['name'],
           },
         ],
       });
@@ -68,27 +72,28 @@ router.get('/dashboard', async (req, res) => {
       res.render('practiceRoom', { 
         cssFile: '/css/posts.css',
         posts, 
-        // logged_in: req.session.logged_in
+        logged_in: req.session.logged_in
       })
     }catch(err){
       res.status(500).json(err)
     }
     })
 
+    // get individual post
 router.get('/post/:id', async (req, res) => {
   try {
       const postData = await Post.findByPk(req.params.id, {
           include: [
               {
                   model: User,
-                  attributes: ['displayName', 'id'],
+                  attributes: ['name', 'id'],
               },
               {
                   model: Comment,
                   attributes: ['content', 'user_id', 'date_created'],
                   include: {
                       model: User,
-                      attributes: ['displayName']
+                      attributes: ['name']
                   }
               }
           ]
@@ -106,10 +111,10 @@ router.get('/post/:id', async (req, res) => {
   }
 })
 
-router.get('/auth/login', async (req, res) => {
+router.get('/users/login', async (req, res) => {
   try {
     if (req.session.logged_in) {
-      res.redirect('/dashboard');
+      res.redirect('/posts');
       return;
     }
     res.render('login', {

@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Comment, User } = require('../../models');
-// const withAuth = require('../../utils/auth');
+const withAuth = require('../../utils/auth');
 
 
 // Gets all comments
@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['displayName'],
+          attributes: ['name'],
         },
       ],
     });
@@ -35,7 +35,7 @@ router.get('/comment/:id', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['displayName'],
+          attributes: ['name'],
         },
       ],
     });
@@ -54,11 +54,12 @@ router.get('/comment/:id', async (req, res) => {
 
 
 //   Posts a comment
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   try {
     const newComment = await Comment.create({
       ...req.body,
       user_id: req.session.user_id,
+      post_id: req.body.postId,
     });
 
     res.status(200).json(newComment);
@@ -70,7 +71,7 @@ router.post('/', async (req, res) => {
 
 
 // Deletes a comment with specified ID.
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
   try {
     const commentData = await Comment.destroy({
       where: {
