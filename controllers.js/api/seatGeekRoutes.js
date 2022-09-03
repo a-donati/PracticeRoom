@@ -1,7 +1,7 @@
 
 const router = require('express').Router();
 require('dotenv').config();
-const { ensureAuth } = require('../../utils/auth');
+// const { ensureAuth } = require('../../utils/auth');
 const axios = require('axios');
 
 

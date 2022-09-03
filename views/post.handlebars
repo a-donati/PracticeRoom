@@ -13,7 +13,7 @@
   <h2 class="card-title mt-2">{{title}}</h2>
   <p>{{{content}}}</p>
   <p>{{description}}</p>
-  <p>Created by {{post.user.displayName}} on {{format_date date_created}}</p>
+  <p>Created by {{user.name}} on {{format_date date_created}}</p>
 </div>
 <br>
 {{!-- <div class="d-flex align-items-center"> --}}
@@ -21,12 +21,12 @@
 
 {{!-- </div> --}}
 {{!-- comments partial, will only render if comments exist --}}
-
+{{#if logged_in}}
 <div class="d-flex justify-content-center">
   <form class="form new-comment-form">
     <div class="form-group d-flex flex-column">
       <label for="comment-content"> Add a comment: </label>
-      <textarea class="form-input" id="comment-content" post_id={{id}} user_name={{user.displayName}}
+      <textarea class="form-input" id="comment-content" post_id={{id}} user_name={{user.name}}
         name="comment-content"></textarea>
     </div>
     <div class="form-group">
@@ -34,6 +34,7 @@
     </div>
   </form>
 </div>
+{{/if}}
 
 {{!-- <script src="/js/post.js"></script> --}}
 <script src="/js/comment.js"></script>

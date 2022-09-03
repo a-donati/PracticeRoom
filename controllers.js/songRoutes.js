@@ -7,7 +7,8 @@ const { Song } = require('../models');
 router.get('/songRoutes', async (req, res) => {
 
     res.render('song', {
-        cssFile: "/css/songSelect.css"
+        cssFile: "/css/songSelect.css",
+        logged_in: req.session.logged_in
     });
 });
 
@@ -28,7 +29,9 @@ router.get('/songRoutes/song', async (req, res) => {
 
     let song = (await songPicker()).get({ plain: true });
 
-    res.render('youtube', { song, cssFile: "/css/songSelect.css" });
+    res.render('youtube', { song, cssFile: "/css/songSelect.css",
+    logged_in: req.session.logged_in
+});
 });
 
 

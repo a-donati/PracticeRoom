@@ -10,6 +10,7 @@
   </header>
 
 
+{{#if logged_in}}
   <div class="col-md-6">
     <h3>Create a new post:</h3>
     {{! form for new post }}
@@ -27,6 +28,7 @@
       </div>
     </form>
   </div>
+{{/if}}
 
 {{!-- <section id="actions" class="py-4 mb-4 bg-med">
     <div class="container">
@@ -66,7 +68,7 @@
                 <tr>
                   <td>{{post.id}}</td>
                   <td>{{post.title}}</td>
-                  <td>{{post.user.displayName}}</td>
+                  <td>{{user.name}}</td>
                   <td>{{format_date post.date_created}}</td>
                   <td>
                     <a href="/post/{{post.id}}" class="btn btn-secondary">
