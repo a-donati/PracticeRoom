@@ -11,6 +11,10 @@ router.get('/', async (req, res) => {
     //   include: [{model: Post}],
     // })
     // const user = userData.get({plain: true});
+    // if (req.session.logged_in) {
+    //   // TODO: replace /profile with redirected page
+    //   document.location.replace('/posts');
+    // }
 
     res.render('homepage', {
       // posts, 

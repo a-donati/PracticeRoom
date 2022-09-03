@@ -8,7 +8,8 @@ const axios = require('axios');
 // get page
 router.get('/', async (req, res) => {
 
-  res.render('seatGeek', {
+  res.render('seatGeek', { logged_in: req.session.logged_in, 
+
     cssFile: "/css/songSelect.css"
   })
 });
@@ -24,7 +25,8 @@ router.get('/:performer', async (req, res) => {
   })
     .then(function (response) {
 
-      res.render('seatGeek', { cssFile: "/css/songSelect.css", performers: response.data.performers });
+      res.render('seatGeek', { cssFile: "/css/songSelect.css",      logged_in: req.session.logged_in, 
+      performers: response.data.performers });
 
     })
     .catch(function (err) {
