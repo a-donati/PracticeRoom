@@ -10,11 +10,16 @@
   </header>
 
 <div class="d-flex flex-column">
-  <h2 class="card-title mt-2">{{title}}</h2>
+  <legend>
+    {{!-- <div class="bg-light"> --}}
+  <h2 class="badge badge-pill badge-primary">{{title}}</h2>
+  <div class="container border bg-dark rounded">
   <p>{{{content}}}</p>
   <p>{{description}}</p>
-  <p>Created by {{user.name}} on {{format_date date_created}}</p>
+  <p class="small">Created by {{user.name}} on {{format_date date_created}}</p>
+  </div>
 </div>
+</legend>
 <br>
 {{!-- <div class="d-flex align-items-center"> --}}
 {{> comment}}
@@ -33,6 +38,10 @@
       <button type="submit" class="btn btn-primary mr-auto">Submit</button>
     </div>
   </form>
+</div>
+        {{else}}
+<div class="d-flex justify-content-center">
+  <a href="/users/login" class="btn btn-info">Click here to sign up or sign in to join the dicussion! </a>
 </div>
 {{/if}}
 
