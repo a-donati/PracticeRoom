@@ -6,9 +6,16 @@ const withAuth = require('../utils/auth');
 // homepage get route
 router.get('/', async (req, res) => {
   try {
+    // const userData = await User.findByPk(req.session.user_id, {
+    //   attributes: { exclude: ['password']},
+    //   include: [{model: Post}],
+    // })
+    // const user = userData.get({plain: true});
+
     res.render('homepage', {
       // posts, 
-        logged_in: req.session.logged_in, 
+      logged_in: req.session.logged_in, 
+      // ...user,
       cssFile: '/css/home.css'
     })
   } catch (err) {
@@ -46,7 +53,9 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
     res.render('dashboard', {
       ...user,
-      logged_in: true
+      logged_in: true,
+      cssFile: '/css/posts.css',
+
     });
   }catch(err){
     res.status(500).json(err);
