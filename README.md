@@ -31,8 +31,10 @@ Once signed in, the user has access to post messages, use the song selector, and
 
 ---
 ## Screenshots
-<img src="public/img/updated-screen-shot.png" alt="drawing" height="600" width="700"/>
-<!-- ![image](./public/img/updated-screen-shot.png) -->
+<img src="public/img/updated-screen-shot.png" alt="Practice room home page" height="600" width="700"/>
+<img src="public/img/tuner.png" alt="Tune by ear page" height="600" width="700"/>
+<img src="public/img/song-selector.png" alt="Song selector page" height="600" width="700"/>
+<img src="public/img/artist-search.png" alt="Artist search page displaying results for Lil Uzi Vert" height="600" width="700"/>
 
 --- 
 
