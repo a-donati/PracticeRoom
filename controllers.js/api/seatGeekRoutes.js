@@ -24,7 +24,7 @@ router.get('/:performer', async (req, res) => {
   })
     .then(function (response) {
 
-      res.render('seatGeek', { performers: response.data.performers });
+      res.render('seatGeek', { cssFile: "/css/songSelect.css", performers: response.data.performers });
 
     })
     .catch(function (err) {
