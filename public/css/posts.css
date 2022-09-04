@@ -9,7 +9,7 @@
 a,
 a:focus,
 a:hover {
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
 
 /* Custom default button */
