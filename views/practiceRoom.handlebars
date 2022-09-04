@@ -1,87 +1,71 @@
-  <header id="main-header" class="py-2 bg-dark text-white">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <h1>
-            Discussion Board</h1>
-        </div>
+<header id="main-header" class="py-2 bg-dark text-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1>
+          Discussion Board</h1>
       </div>
     </div>
-  </header>
+  </div>
+</header>
 
 
 {{#if logged_in}}
-  <div class="col-md-6">
-    <h3>Create a new post:</h3>
-    {{! form for new post }}
-    <form class="form new-post-form">
-      <div class="form-group">
-        <label for="post-name">Post title:</label>
-        <input class="form-input" type="text" id="post-title" name="post-title" />
-      </div>
-      <div class="form-group">
-        <label for="post-content">Content:</label>
-        <textarea class="form-input" id="post-content" name="post-content"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-outline-light btn-dark">Submit post</button>
-      </div>
-    </form>
-  </div>
+<div class="col-md-6">
+  <h3>Create a new post:</h3>
+  {{! form for new post }}
+  <form class="form new-post-form">
+    <div class="form-group">
+      <label for="post-name">Post title:</label>
+      <input class="form-input" type="text" id="post-title" name="post-title" />
+    </div>
+    <div class="form-group">
+      <label for="post-content">Content:</label>
+      <textarea class="form-input" id="post-content" name="post-content"></textarea>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-outline-light btn-dark">Submit post</button>
+    </div>
+  </form>
+</div>
 {{/if}}
 
-{{!-- <section id="actions" class="py-4 mb-4 bg-med">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-          <a href="#" class="btn btn-primary btn-block" data-toggle="modal" data-target="#addPostModal">
-            <i class="fas fa-plus"></i> Add Post
-          </a>
-        </div>
-        </div>
-        </section> --}}
-
-
-              <h2>Latest Posts</h2>
+<h2>Latest Posts</h2>
 
 <section id="posts" class="pb-4">
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <div class="card">
-            {{!-- <div class="card-header"> --}}
-              
-              {{!-- <h2 class="bg-dark">Latest Posts</h2> --}}
-            {{!-- </div> --}}
-            <table class="table table-striped">
-              <thead class="thead-dark">
-                <tr>
-                  <th>#</th>
-                  <th>Title</th>
-                  <th>Posted By:</th>
-                  <th>Date</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                 {{#each posts as |post| }}
-                <tr>
-                  <td>{{post.id}}</td>
-                  <td>{{post.title}}</td>
-                  <td>{{user.name}}</td>
-                  <td>{{format_date post.date_created}}</td>
-                  <td>
-                    <a href="/post/{{post.id}}" class="btn btn-secondary">
-                      <i class="fas fa-angle-double-right"></i> Details
-                    </a>
-                  </td>
-                </tr>
-                {{/each}}
-</tbody>
-     </div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <table class="table table-striped">
+            <thead class="thead-dark">
+              <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Posted By:</th>
+                <th>Date</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each posts as |post| }}
+              <tr>
+                <td>{{post.id}}</td>
+                <td>{{post.title}}</td>
+                <td>{{user.name}}</td>
+                <td>{{format_date post.date_created}}</td>
+                <td>
+                  <a href="/post/{{post.id}}" class="btn btn-secondary">
+                    <i class="fas fa-angle-double-right"></i> Details
+                  </a>
+                </td>
+              </tr>
+              {{/each}}
+            </tbody>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
 <script src="/js/post.js"></script>

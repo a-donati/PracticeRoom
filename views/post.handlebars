@@ -1,56 +1,49 @@
-  <header id="main-header" class="py-2 bg-dark text-white">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <h1>
-            Post {{id}}</h1>
-        </div>
+<header id="main-header" class="py-2 bg-dark text-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1>
+          Post {{id}}</h1>
       </div>
     </div>
-  </header>
+  </div>
+</header>
 
 <div class="d-flex flex-column">
   <legend>
-    {{!-- <div class="bg-light"> --}}
-  <h2 class="badge badge-pill badge-primary">{{title}}</h2>
-  <div class="container border bg-dark rounded">
-  <p>{{{content}}}</p>
-  <p>{{description}}</p>
-  <p class="small">Created by {{user.name}} on {{format_date date_created}}</p>
+      <h2 class="badge badge-pill badge-dark">{{title}}</h2>
+      <div class="container border bg-dark rounded">
+        <p>{{{content}}}</p>
+        <p>{{description}}</p>
+        <p class="small">Created by {{user.name}} on {{format_date date_created}}</p>
+      </div>
+    </div>
+  </legend>
+  <br>
+  {{!-- <div class="d-flex align-items-center"> --}}
+    {{> comment}}
+
+    {{!-- </div> --}}
+  {{!-- comments partial, will only render if comments exist --}}
+  {{#if logged_in}}
+  <div class="d-flex justify-content-center">
+    <form class="form new-comment-form">
+      <div class="form-group d-flex flex-column">
+        <label for="comment-content"> Add a comment: </label>
+        <textarea class="form-input" id="comment-content" post_id={{id}} user_name={{user.name}}
+          name="comment-content"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-outline-light btn-dark mr-auto">Submit</button>
+      </div>
+    </form>
   </div>
-</div>
-</legend>
-<br>
-{{!-- <div class="d-flex align-items-center"> --}}
-{{> comment}}
+  {{else}}
+  <div class="d-flex justify-content-center">
+    <a href="/users/login" class="btn btn-info">Click here to sign up or sign in to join the dicussion! </a>
+  </div>
+  {{/if}}
 
-{{!-- </div> --}}
-{{!-- comments partial, will only render if comments exist --}}
-{{#if logged_in}}
-<div class="d-flex justify-content-center">
-  <form class="form new-comment-form">
-    <div class="form-group d-flex flex-column">
-      <label for="comment-content"> Add a comment: </label>
-      <textarea class="form-input" id="comment-content" post_id={{id}} user_name={{user.name}}
-        name="comment-content"></textarea>
-    </div>
-    <div class="form-group">
-      <button type="submit" class="btn btn-outline-light btn-dark mr-auto">Submit</button>
-    </div>
-  </form>
-</div>
-        {{else}}
-<div class="d-flex justify-content-center">
-  <a href="/users/login" class="btn btn-info">Click here to sign up or sign in to join the dicussion! </a>
-</div>
-{{/if}}
-
-{{!-- <script src="/js/post.js"></script> --}}
-<script src="/js/comment.js"></script>
-
-
-
-
-
-
-
+  {{!--
+  <script src="/js/post.js"></script> --}}
+  <script src="/js/comment.js"></script>
