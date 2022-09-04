@@ -66,7 +66,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
       const posts = postData.map((post) => post.get({ plain: true }));
       // Pass serialized data and session flag into template
       res.render('practiceRoom', { 
-        cssFile: '/css/posts.css',
+        cssFile: '/css/home.css',
         posts, 
         logged_in: req.session.logged_in
       })
@@ -96,7 +96,7 @@ router.get('/post/:id', async (req, res) => {
       });
       const post = postData.get({ plain: true });
       res.render('post', {
-        cssFile: '/css/posts.css',
+        cssFile: '/css/home.css',
          ...post,
          logged_in: req.session.logged_in
 

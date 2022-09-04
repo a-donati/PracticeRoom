@@ -5,7 +5,7 @@ const router = require('express').Router();
 router.get('/tunerRoutes', async (req, res) => {
 
     res.render('tuner', {
-        cssFile: '/css/posts.css',
+        cssFile: '/css/home.css',
         logged_in: req.session.logged_in
 
       })
