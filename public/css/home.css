@@ -21,10 +21,15 @@ a:hover {
  * Base structure
  */
 
-html,
+/* html,
 body {
   height: 100%;
-  background-color: #fff;
+  background-color: #fff; */
+
+/* } */
+
+main {
+  background-color: #ffffff;
 
 }
 body {
@@ -33,9 +38,9 @@ body {
   /* text-shadow: 0 1px 3px rgba(0,0,0,.5); */
   margin-top: 0px;
   width: 100%;
-  background: url(../img/header.jpg) no-repeat center center;
-  background-color: #cccfda;
-  background-size: cover;
+  /* background: url(../img/header.jpg) no-repeat center center; */
+  /* background-color: #8ba6ca;
+  background-size: cover; */
   justify-content: center;
   align-items: center;
   
@@ -55,5 +60,10 @@ body {
 
 .small {
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
+
+}
+
+.jumbotron {
+  background: url(https://images.unsplash.com/photo-1561014816-50ce5acb5e73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHBpYW5vfGVufDB8fDB8fA%3D%3D&w=1000&q=80) no-repeat center center;
 
 }

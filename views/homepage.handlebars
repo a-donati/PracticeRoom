@@ -1,12 +1,63 @@
-<div class="content header">
-    <h1 class="heading">
+{{!-- <div class="content header">
+    <h1 class="heading"> --}}
         {{#if logged_in}}
 {{!-- <h1>Welcome back, {{name}}</h1> --}}
     {{else}}
-        <span class="small">Welcome to the Practice Room </span>
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-6">Welcome to the Practice Room</h1>
+    <p class="lead"><a class="btn btn-outline-dark btn-light" href="/users/login" role="button" style="text-transform:none">Login/Sign Up
+    </a></p>
+  </div>
+</div>
+
+{{!-- ex --}}
+
+<div class="container marketing">
+
+       
+
+        <!-- START THE FEATURETTES -->
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h4 class="featurette-heading text-dark">Discussion board:</h4>
+            <p class="lead text-muted">Sign up or login to connect with other musically inclined users on our discussion board</p>
+          </div>
+          <div class="col-md-5">
+            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" style="width: 100px; height: 100px;" src="https://img.icons8.com/nolan/344/laid-back--v2.png" data-holder-rendered="true">
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h4 class="featurette-heading text-dark">Additional features:</h4>
+            <p class="lead text-muted">Enjoy our Song Selector, search for artists and events, or tune your instrument by ear</p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" style="width: 100px; height: 100px;" src="https://img.icons8.com/bubbles/344/photos-folder.png" data-holder-rendered="true">
+          </div>
+        </div>
+
+       
+          
+        
+
+        <hr class="featurette-divider">
+
+        <!-- /END THE FEATURETTES -->
+
+      </div>
+
+
+        {{!-- <span class="small">Welcome to the Practice Room </span>
     </h1>
     <a class="btn btn-outline-dark btn-light" href="/users/login" role="button" style="text-transform:none">Login/Sign Up
-    </a>
+    </a> --}}
     {{/if}}
 
     {{!-- <a class="btn btn-outline-dark btn-light" href="/auth/google" role="button" style="text-transform:none">
