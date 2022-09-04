@@ -1,16 +1,20 @@
 # Practice Room
 ## Description
 
-This application is a resource/tool for music enthusiasts looking to post about music, find something new to listen to, or tune their instrument. User can create an account or use Google to sign in.
-Once signed in, the user has access to post messages, use the song selector, and the artist search feature.  The front end was created using HTML/CSS/Boostrap with Handlebars.js as the view engine. Back end was created with node.js and utilizes a mySQL database. 
+This application is a resource/tool for music enthusiasts looking to post about music, find something new to listen to, or tune their instrument. 
+Once signed in, the user has the ability to post messages, use the song selector, and the artist search feature.  The front end was created using HTML/CSS/Boostrap with Handlebars.js as the view engine. The back end was created with node.js and utilizes a mySQL database. 
+
+[Deployed Application](http://tranquil-eyrie-98828.herokuapp.com/) 
+
 
 
 ## Features
 
-* Passport.js for login authentication
+* [bcrypt](https://www.npmjs.com/package/bcrypt)
 * Tuner feature - tune by ear or by specific instrument
 * Randomized song selector to discover new music
 * Artist search feature powered by SeatGeek.com
+* Discussion board to post with fellow users
 
 ---
 
@@ -31,10 +35,11 @@ Once signed in, the user has access to post messages, use the song selector, and
 
 ---
 ## Screenshots
-<img src="public/img/updated-screen-shot.png" alt="Practice room home page" height="600" width="700"/>
-<img src="public/img/tuner.png" alt="Tune by ear page" height="600" width="700"/>
-<img src="public/img/song-selector.png" alt="Song selector page" height="600" width="700"/>
-<img src="public/img/artist-search.png" alt="Artist search page displaying results for Lil Uzi Vert" height="600" width="700"/>
+<img src="public/img/landing-new.png" alt="Practice room home page" height="400" width="400"/>
+<img src="public/img/login-new.png" alt="Practice room login and sign up page" height="400" width="400"/>
+<img src="public/img/tuner.png" alt="Tune by ear page" height="400" width="400"/>
+<img src="public/img/song-selector-new.png" alt="Song selector page" height="400" width="400"/>
+<img src="public/img/artist-search-new.png" alt="Artist search page displaying results for Lil Uzi Vert" height="400" width="400"/>
 
 --- 
 
