@@ -17,7 +17,12 @@
 
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
   <div class="container">
+    {{#if logged_in}}
+    <a href="#" class="navbar-brand">Practice Room</a>
+    {{else}}
     <a href="/" class="navbar-brand">Practice Room</a>
+    {{/if}}
+
     <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -84,16 +89,9 @@
         <a href="/">Practice Room</a>
       </div>
       <div class="nav_right"> --}}
-
       </div>
     </div>
     </li>
-    {{!-- <li class="nr_li">
-
-      <input type="text" placeholder="Search.." name="search">
-      <button type="submit"><i class="fa fa-search"></i></button>
-      </form>
-    </li> --}}
     </ul>
   </div>
   </div>
@@ -110,7 +108,7 @@
     crossorigin="anonymous"></script>
   <script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
 
-<script src="/js/logout.js"></script>
+  <script src="/js/logout.js"></script>
 
 
 </body>

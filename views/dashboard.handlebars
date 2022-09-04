@@ -10,7 +10,13 @@
   </header>
 
 
-<script src="./js/dashboard.js"></script>
-{{#if posts.length}}
+    <div class="mt-4 bg-light container text-dark">
+      <h3>Your stats:</h3>
+      <p>Posts:{{posts}}</p>
+      </div>
+
+
+<script src="./js/redditApi.js"></script>
+{{!-- {{#if posts.length}}
 <script src="./js/dashdeletebutton.js"></script>
-{{/if}}
+{{/if}} --}}

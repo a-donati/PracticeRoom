@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
 // const { ensureAuth, ensureGuest } = require('../utils/auth')
 const withAuth = require('../utils/auth');
+const axios = require('axios');
 
 // homepage get route
 router.get('/', async (req, res) => {
@@ -28,31 +29,13 @@ router.get('/', async (req, res) => {
 });
 
 
-// dashboard
-// router.get('/dashboard', ensureAuth, async (req, res) => {
-//   try {
-//     const userData = await User.findOne({where: {username: username}}, {
-//       attributes: { exclude: ['password']},
-//       include: [{model: Post}],
-//     })
-//     const user = userData.get({plain: true});
-    
-//     res.render('dashboard', {
-//       ...user,
-//       logged_in: true
-//     });
-//   }catch(err){
-//     res.status(500).json(err);
-//   }
-//  });
-
-
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password']},
       include: [{model: Post}],
     })
+
     const user = userData.get({plain: true});
 
     res.render('dashboard', {
