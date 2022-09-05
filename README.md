@@ -30,7 +30,6 @@ Once signed in, the user has the ability to post messages, use the song selector
 
 * [Links](#links)
 
-
 * [References](#references)
 
 ---
@@ -81,3 +80,6 @@ To help add functionality, or for debugging/refactoring the code, please contact
 [Handlebars.js](https://www.npmjs.com/package/handlebars)
 
 [SeatGeek API](http://platform.seatgeek.com/)
+
+[Icons are from icons8.com](https://icons8.com/icons/set/calm)
+
