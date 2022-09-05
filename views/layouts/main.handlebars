@@ -15,56 +15,53 @@
   <title>HomePage</title>
 </head>
 
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
-  <div class="container">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-0">
     {{#if logged_in}}
     <a href="#" class="navbar-brand">Practice Room</a>
     {{else}}
     <a href="/" class="navbar-brand">Practice Room</a>
     {{/if}}
 
-    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav">
+      {{!-- <ul class="navbar-nav mr-auto">
 
-      </ul>
+      </ul> --}}
 
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown mr-3">
-          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-            <i class="fas fa-user"></i> Menu
-          </a>
-          <div class="dropdown-menu">
-            {{!-- {{#if logged_in}}
-            <a href="/dashboard" class="dropdown-item">
-              <i class="fas fa-user-circle"></i> Dashboard
-            </a>
-            {{/if}} --}}
+            <li>
             <a href="/posts" class="dropdown-item">
               <i class="fas fa-comments"></i> Discussion
             </a>
+            </li>
+            <li>
             <a href="/songRoutes" class="dropdown-item">
               <i class="fas fa-music"></i> Song Selector
             </a>
+            </li>
+            <li>
             <a href="/tunerRoutes" class="dropdown-item">
               <i class="fas fa-guitar"></i> Tuner
             </a>
+            </li>
+            <li>
             <a href="/api/seatGeekRoutes" class="dropdown-item">
               <i class="fas fa-search"></i> Artist Search
             </a>
+            </li>
             {{#if logged_in}}
+            <li>
             <button class="dropdown-item" id="logout">
               <i class="fas fa-sign-out-alt"></i> Sign Out
             </button>
+            </li>
             {{/if}}
-          </div>
         </li>
         </li>
       </ul>
     </div>
-  </div>
 </nav>
 
 <body>

@@ -21,21 +21,12 @@ a:hover {
   background-color: #fff;
   border: 1px solid #fff;
 }
-/*
- * Base structure
- */
-
-/* body {
-  color: #fff;
-  text-align: center; */
-  /* text-shadow: 0 1px 3px rgba(0,0,0,.5); */
-  /* background-color: #cccfda;
-  background-size: cover;
-  justify-content: center;
-  align-items: center;
-} */
 
 .header {
 
   margin-top: 100px;
+}
+
+.dropdown-item {
+  color: white;
 }

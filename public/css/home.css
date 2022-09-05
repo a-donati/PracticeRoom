@@ -67,3 +67,7 @@ body {
   background: url(https://images.unsplash.com/photo-1561014816-50ce5acb5e73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHBpYW5vfGVufDB8fDB8fA%3D%3D&w=1000&q=80) no-repeat center center;
 
 }
+
+.dropdown-item {
+  color: white;
+}

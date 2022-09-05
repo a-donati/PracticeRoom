@@ -39,7 +39,7 @@ const signupFormHandler = async (event) => {
 
         if (response.ok) {
             // TODO: replace /profile with redirected page
-            document.location.replace('/dashboard');
+            document.location.replace('/posts');
         } else {
             alert(response.statusText);
         }

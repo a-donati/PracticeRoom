@@ -45,10 +45,9 @@ section {
     padding: 20px 5px !important;
 }
 
-/* button {
-    background: #112dcf !important;
-    color: #e6e4e3 !important;
-} */
+.dropdown-item {
+    color: white;
+  }
 
 
 
