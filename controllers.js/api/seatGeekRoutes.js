@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
 
   res.render('seatGeek', { logged_in: req.session.logged_in, 
 
-    cssFile: "/css/songSelect.css"
+    cssFile: "/css/home.css"
   })
 });
 
@@ -25,7 +25,7 @@ router.get('/:performer', async (req, res) => {
   })
     .then(function (response) {
 
-      res.render('seatGeek', { cssFile: "/css/songSelect.css",      logged_in: req.session.logged_in, 
+      res.render('seatGeek', { cssFile: "/css/home.css",      logged_in: req.session.logged_in, 
       performers: response.data.performers });
 
     })

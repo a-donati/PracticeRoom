@@ -3,7 +3,8 @@
     padding: 0;
     box-sizing: border-box;
     list-style: none;
-    font-family: 'Jost', sans-serif;
+    font-family: 'Roboto', sans-serif;
+
 }
 
 :root {
@@ -291,6 +292,11 @@ input {
         text-align: left;
     }
 }
+
+/* .navbar-collapse {
+    justify-content: absolute;
+    align-items: center;
+} */
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {}
