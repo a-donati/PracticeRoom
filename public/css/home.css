@@ -78,3 +78,9 @@ body {
   background-color: rgb(50, 116, 93)!important;
 }
 
+.btn-secondary {
+  background-color: #7119E1;
+}
+.btn-secondary:hover {
+  background-color: #5110a5;
+}

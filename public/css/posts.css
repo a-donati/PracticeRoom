@@ -33,3 +33,10 @@ a:hover {
 .dropdown-item {
   color: white;
 }
+
+.btn-secondary {
+  background-color: #7119E1;
+}
+.btn-secondary:hover {
+  background-color: #5110a5;
+}

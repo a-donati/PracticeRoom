@@ -20,7 +20,12 @@
     box-sizing: border-box;
 }
 
-
+.btn-secondary {
+    background-color: #7119E1;
+  }
+  .btn-secondary:hover {
+    background-color: #5110a5;
+  }
 
 /* --------------- Main --------------- */
 header {
